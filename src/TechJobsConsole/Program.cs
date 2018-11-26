@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 
 namespace TechJobsConsole
 {
@@ -8,7 +9,6 @@ namespace TechJobsConsole
         static void Main(string[] args)
         {
             // Create two Dictionary vars to hold info for menu and data
-
             // Top-level menu options
             Dictionary<string, string> actionChoices = new Dictionary<string, string>();
             actionChoices.Add("search", "Search");
@@ -57,6 +57,7 @@ namespace TechJobsConsole
                     // What is their search term?
                     Console.WriteLine("\nSearch term: ");
                     string searchTerm = Console.ReadLine();
+
 
                     List<Dictionary<string, string>> searchResults;
 
@@ -118,7 +119,22 @@ namespace TechJobsConsole
 
         private static void PrintJobs(List<Dictionary<string, string>> someJobs)
         {
-            Console.WriteLine("printJobs is not implemented yet");
+            if (someJobs.Count != 0)
+            {
+                foreach (Dictionary<string, string> job in someJobs)
+                {
+                    Console.WriteLine("\n*****");
+                    foreach (KeyValuePair<string, string> col in job)
+                    {
+                        Console.WriteLine(col.Key + ": " + col.Value);
+                    }
+                    Console.WriteLine("*****");
+                }
+            } else
+            {
+                Console.WriteLine("No result.");
+            }
+
         }
     }
 }

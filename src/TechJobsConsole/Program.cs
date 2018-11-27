@@ -34,7 +34,7 @@ namespace TechJobsConsole
                 {
                     string columnChoice = GetUserSelection("List", columnChoices);
 
-                    if (columnChoice.Equals("all"))
+                    if (columnChoice.Equals("all")) 
                     {
                         PrintJobs(JobData.FindAll());
                     }
@@ -64,7 +64,7 @@ namespace TechJobsConsole
                     // Fetch results
                     if (columnChoice.Equals("all"))
                     {
-                        Console.WriteLine("Search all fields not yet implemented.");
+                        PrintJobs(JobData.FindAll());
                     }
                     else
                     {

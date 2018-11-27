@@ -68,7 +68,7 @@ namespace TechJobsConsole
             {
                 foreach (KeyValuePair<string, string> col in job)
                 {
-                    /*
+                    
                     char[] separator = {' ', ',' };
                     string[] substrings = col.Value.Split(separator);
                     foreach (string st in substrings)
@@ -81,7 +81,7 @@ namespace TechJobsConsole
                             }
                         }
                     }
-                    */
+                   
                     if (col.Value.ToLower().Contains(value.ToLower()))
                     {
                         if (!(jobs.Contains(job)))
